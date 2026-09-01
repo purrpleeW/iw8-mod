@@ -1,0 +1,81 @@
+#pragma once
+#include "engine/engine_common.hpp"
+
+#include <utility/strings.hpp>
+
+namespace IW8::Lua {
+	class CRMLocation {
+	public:
+		enum Enum {
+			UNUSABLE = 0,
+			MP_MOTD = 1,
+			MP_MSGS = 2,
+			BR_MOTD = 6,
+			BR_MSGS = 7,
+			PATCH_NOTES = 8,
+			ENFORCEMENT_NOTIFICATIONS = 9,
+			CS_NOTIFICATIONS = 10,
+			CP_MOTD = 11,
+			CP_MSGS = 12,
+			STORE = 12,
+			MW_LIVE_EVENT = 22,
+			WZ_LIVE_EVENT = 23,
+			CW_LIVE_EVENT = 24,
+			NG_LIVE_EVENT = 25
+		};
+
+		static inline Enum FromString(const std::string& str) {
+			std::string upper = Common::Utility::Strings::ToUpper(str);
+#			define CHECK_AND_RETURN_STR(x) \
+				if (upper == #x) { \
+					return Enum::x; \
+				}
+
+			CHECK_AND_RETURN_STR(UNUSABLE);
+			CHECK_AND_RETURN_STR(MP_MOTD);
+			CHECK_AND_RETURN_STR(MP_MSGS);
+			CHECK_AND_RETURN_STR(BR_MOTD);
+			CHECK_AND_RETURN_STR(BR_MSGS);
+			CHECK_AND_RETURN_STR(PATCH_NOTES);
+			CHECK_AND_RETURN_STR(ENFORCEMENT_NOTIFICATIONS);
+			CHECK_AND_RETURN_STR(CS_NOTIFICATIONS);
+			CHECK_AND_RETURN_STR(CP_MOTD);
+			CHECK_AND_RETURN_STR(CP_MSGS);
+			CHECK_AND_RETURN_STR(STORE);
+			CHECK_AND_RETURN_STR(MW_LIVE_EVENT);
+			CHECK_AND_RETURN_STR(WZ_LIVE_EVENT);
+			CHECK_AND_RETURN_STR(CW_LIVE_EVENT);
+			CHECK_AND_RETURN_STR(NG_LIVE_EVENT);
+			
+#			undef CHECK_AND_RETURN_STR
+			return Enum::UNUSABLE;
+		}
+
+		static inline std::string ToString(Enum v) {
+#			define CHECK_AND_RETURN(x) \
+				if (v == Enum::x) { \
+					return #x; \
+				}
+
+			CHECK_AND_RETURN(UNUSABLE);
+			CHECK_AND_RETURN(MP_MOTD);
+			CHECK_AND_RETURN(MP_MSGS);
+			CHECK_AND_RETURN(BR_MOTD);
+			CHECK_AND_RETURN(BR_MSGS);
+			CHECK_AND_RETURN(PATCH_NOTES);
+			CHECK_AND_RETURN(ENFORCEMENT_NOTIFICATIONS);
+			CHECK_AND_RETURN(CS_NOTIFICATIONS);
+			CHECK_AND_RETURN(CP_MOTD);
+			CHECK_AND_RETURN(CP_MSGS);
+			CHECK_AND_RETURN(STORE);
+			CHECK_AND_RETURN(MW_LIVE_EVENT);
+			CHECK_AND_RETURN(WZ_LIVE_EVENT);
+			CHECK_AND_RETURN(CW_LIVE_EVENT);
+			CHECK_AND_RETURN(NG_LIVE_EVENT);
+			
+#			undef CHECK_AND_RETURN
+
+			return "?";
+		}
+	};
+}
