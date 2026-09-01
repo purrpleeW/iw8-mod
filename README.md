@@ -8,6 +8,11 @@
   <img src="assets/github/banner.png?raw=true" />
 </p>
 
+# WARNING ⚠️
+
+This repository was originally created by [Xifil](https://github.com/xifil), all development credits go to them.
+IW8-Mod was originally an open-source effort, however we've moved away from that and now only distribute our mod within our official Discord, found [here](https://discord.gg/WVSErUvBbj).
+
 NOTE: You must legally own [Call of Duty®: Modern Warfare](https://store.steampowered.com/app/2000950/) to run this mod. Cracked/Pirated versions of the game are **NOT** supported.
 
 ## Compile from source
