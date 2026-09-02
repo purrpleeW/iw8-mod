@@ -20,13 +20,10 @@ NOTE: You must legally own [Call of Duty®: Modern Warfare](https://store.steamp
 - Clone the Git repo. Do NOT download it as ZIP, that won't work.
   > You can run
   > ```
-  > git clone https://github.com/xifil/iw8-mod.git --recurse-submodules
+  > git clone https://github.com/purrpleeW/iw8-mod.git --recurse-submodules
   > ```
-  > or
-  > ```
-  > git clone https://gitlab.com/xifil/iw8-mod.git --recurse-submodules
-  > ```
-  > depending on what Git you would like to use, however you always need the `--recurse-submodules` flag.
+
+- You always need the `--recurse-submodules` flag.
 - Update the submodules and run `premake5 vs2022` or simply use the delivered `generate.bat`.
 - Build via solution file in `iw8_vs2022.sln`.
 
